@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitar información | TrackFlow</title>
+    <meta
+      name="description"
+      content="Formulario para solicitar información comercial sobre los servicios logísticos de TrackFlow para e-commerce."
+    />
+    <meta name="author" content="TrackFlow" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-slate-100 text-slate-900 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur" aria-label="Encabezado principal">
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <a
+          href="index.html"
+          class="text-xl font-semibold tracking-tight text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+          >TrackFlow</a
+        >
+        <nav aria-label="Navegación principal">
+          <ul class="hidden items-center gap-6 text-sm font-medium md:flex">
+            <li>
+              <a
+                href="index.html"
+                class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >Inicio</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#servicios"
+                class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >Servicios</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#cobertura"
+                class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >Cobertura</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#contacto"
+                class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >Contacto</a
+              >
+            </li>
+            <li>
+              <a
+                href="application.html"
+                class="text-sky-700 transition hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >Solicitar información</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <nav class="border-t border-slate-200 md:hidden" aria-label="Navegación móvil">
+        <ul class="mx-auto flex w-full max-w-7xl flex-wrap items-center gap-3 px-4 py-3 text-sm font-medium sm:px-6 lg:px-8">
+          <li>
+            <a
+              href="index.html"
+              class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#servicios"
+              class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#cobertura"
+              class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              >Cobertura</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#contacto"
+              class="text-slate-700 transition hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              >Contacto</a
+            >
+          </li>
+          <li>
+            <a
+              href="application.html"
+              class="text-sky-700 transition hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              >Solicitar información</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="bg-gradient-to-br from-sky-900 to-blue-950 text-white" aria-label="Introducción al formulario">
+        <div class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <article class="max-w-3xl">
+            <h1 class="text-3xl font-bold leading-tight sm:text-4xl">Solicita información comercial</h1>
+            <p class="mt-5 text-base leading-relaxed text-sky-100 sm:text-lg">
+              Este formulario está dirigido a empresas e-commerce que desean evaluar gestión de almacenes, entregas de última milla o logística inversa con TrackFlow.
+            </p>
+            <p class="mt-4 rounded-lg border border-sky-300/30 bg-sky-400/10 px-4 py-3 text-sm text-sky-50">
+              Revisaremos tu solicitud y te responderemos en un plazo de 24-48 horas.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16" aria-label="Formulario de solicitud">
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-300/30 sm:p-8 lg:p-10">
+          <form id="leadForm" method="post" novalidate class="space-y-8">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <label for="companyName" class="mb-2 block text-sm font-semibold text-slate-800">Nombre de la empresa</label>
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  required
+                  minlength="2"
+                  autocomplete="organization"
+                  aria-describedby="companyNameError"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                />
+                <p id="companyNameError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="contactPerson" class="mb-2 block text-sm font-semibold text-slate-800">Persona de contacto</label>
+                <input
+                  type="text"
+                  id="contactPerson"
+                  name="contactPerson"
+                  required
+                  autocomplete="name"
+                  aria-describedby="contactPersonError"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                />
+                <p id="contactPersonError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="corporateEmail" class="mb-2 block text-sm font-semibold text-slate-800">Email corporativo</label>
+                <input
+                  type="email"
+                  id="corporateEmail"
+                  name="corporateEmail"
+                  required
+                  autocomplete="email"
+                  aria-describedby="corporateEmailError"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                />
+                <p id="corporateEmailError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="phone" class="mb-2 block text-sm font-semibold text-slate-800">Teléfono</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  autocomplete="tel"
+                  placeholder="+1 213 555 0147"
+                  aria-describedby="phoneError"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                />
+                <p id="phoneError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="companyWebsite" class="mb-2 block text-sm font-semibold text-slate-800">Sitio web de la empresa</label>
+                <input
+                  type="url"
+                  id="companyWebsite"
+                  name="companyWebsite"
+                  autocomplete="url"
+                  placeholder="https://empresa.com"
+                  aria-describedby="companyWebsiteError"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                />
+                <p id="companyWebsiteError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="operationCountry" class="mb-2 block text-sm font-semibold text-slate-800">País de operación principal</label>
+                <select
+                  id="operationCountry"
+                  name="operationCountry"
+                  required
+                  aria-describedby="operationCountryError"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option value="us">Estados Unidos</option>
+                  <option value="spain">España</option>
+                  <option value="both">Ambos</option>
+                  <option value="other">Otro</option>
+                </select>
+                <p id="operationCountryError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="productType" class="mb-2 block text-sm font-semibold text-slate-800">Tipo de producto</label>
+                <select
+                  id="productType"
+                  name="productType"
+                  required
+                  aria-describedby="productTypeError"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option value="fashion">Moda</option>
+                  <option value="electronics">Electrónica</option>
+                  <option value="cosmetics">Cosmética</option>
+                  <option value="food">Alimentación</option>
+                  <option value="other">Otro</option>
+                </select>
+                <p id="productTypeError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="monthlyVolume" class="mb-2 block text-sm font-semibold text-slate-800">Volumen mensual estimado de envíos</label>
+                <select
+                  id="monthlyVolume"
+                  name="monthlyVolume"
+                  required
+                  aria-describedby="monthlyVolumeError volumeWarning"
+                  class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option value="0-100">0-100</option>
+                  <option value="101-500">101-500</option>
+                  <option value="501-2000">501-2000</option>
+                  <option value="2000+">2000+</option>
+                  <option value="not-sure">No estoy seguro</option>
+                </select>
+                <p id="monthlyVolumeError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+                <p id="volumeWarning" class="hidden mt-2 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-700" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <fieldset class="rounded-xl border border-slate-200 p-5">
+              <legend class="px-2 text-sm font-semibold text-slate-800">Servicios de interés</legend>
+              <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                <label for="serviceStorage" class="flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
+                  <input
+                    type="checkbox"
+                    id="serviceStorage"
+                    name="services"
+                    value="storage"
+                    aria-describedby="servicesError"
+                    class="h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                  />
+                  Almacenaje
+                </label>
+                <label for="serviceLastMile" class="flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
+                  <input
+                    type="checkbox"
+                    id="serviceLastMile"
+                    name="services"
+                    value="lastMile"
+                    aria-describedby="servicesError"
+                    class="h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                  />
+                  Última milla
+                </label>
+                <label for="serviceReverse" class="flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
+                  <input
+                    type="checkbox"
+                    id="serviceReverse"
+                    name="services"
+                    value="reverseLogistics"
+                    aria-describedby="servicesError"
+                    class="h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                  />
+                  Logística inversa
+                </label>
+              </div>
+              <p id="servicesError" class="mt-3 text-sm text-red-600" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="rounded-xl border border-slate-200 p-5">
+              <legend class="px-2 text-sm font-semibold text-slate-800">¿Actualmente trabajas con otro 3PL?</legend>
+              <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                <label for="current3plYes" class="flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
+                  <input
+                    type="radio"
+                    id="current3plYes"
+                    name="current3pl"
+                    value="yes"
+                    required
+                    aria-describedby="current3plError"
+                    class="h-4 w-4 border-slate-300 text-sky-600 focus:ring-sky-500"
+                  />
+                  Sí
+                </label>
+                <label for="current3plNo" class="flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
+                  <input
+                    type="radio"
+                    id="current3plNo"
+                    name="current3pl"
+                    value="no"
+                    required
+                    aria-describedby="current3plError"
+                    class="h-4 w-4 border-slate-300 text-sky-600 focus:ring-sky-500"
+                  />
+                  No
+                </label>
+                <label for="current3plEvaluating" class="flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
+                  <input
+                    type="radio"
+                    id="current3plEvaluating"
+                    name="current3pl"
+                    value="evaluating"
+                    required
+                    aria-describedby="current3plError"
+                    class="h-4 w-4 border-slate-300 text-sky-600 focus:ring-sky-500"
+                  />
+                  Estoy evaluando opciones
+                </label>
+              </div>
+              <p id="current3plError" class="mt-3 text-sm text-red-600" aria-live="polite"></p>
+            </fieldset>
+
+            <div>
+              <label for="comments" class="mb-2 block text-sm font-semibold text-slate-800">Comentarios o necesidades específicas</label>
+              <textarea
+                id="comments"
+                name="comments"
+                maxlength="500"
+                rows="5"
+                placeholder="Comparte contexto sobre tus operaciones actuales, objetivos de crecimiento y retos logísticos para que nuestro equipo prepare una propuesta inicial."
+                aria-describedby="commentsCounter commentsError"
+                class="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+              ></textarea>
+              <p id="commentsCounter" class="mt-2 text-sm text-slate-600">500 caracteres disponibles</p>
+              <p id="commentsError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label for="privacyPolicy" class="flex items-start gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
+                <input
+                  type="checkbox"
+                  id="privacyPolicy"
+                  name="privacyPolicy"
+                  required
+                  aria-describedby="privacyPolicyError"
+                  class="mt-0.5 h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                />
+                <span>Acepto la política de privacidad y autorizo a TrackFlow a contactarme sobre mi solicitud.</span>
+              </label>
+              <p id="privacyPolicyError" class="mt-2 text-sm text-red-600" aria-live="polite"></p>
+            </div>
+
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center rounded-md bg-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2"
+              >
+                Enviar solicitud
+              </button>
+              <button
+                type="reset"
+                class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+              >
+                Limpiar formulario
+              </button>
+            </div>
+          </form>
+        </article>
+
+        <section
+          id="successMessage"
+          class="hidden mt-8 rounded-2xl border border-emerald-300 bg-emerald-50 p-6 text-emerald-900 shadow-md"
+          aria-live="polite"
+        >
+          <h2 class="text-xl font-bold">¡Gracias por tu interés en TrackFlow!</h2>
+          <p class="mt-3 text-sm leading-relaxed sm:text-base">
+            Hemos recibido tu solicitud. Nuestro equipo comercial revisará tu información y te contactará en las próximas 24-48 horas para agendar una llamada y conocer tus necesidades logísticas en detalle.
+          </p>
+          <p class="mt-3 text-sm leading-relaxed sm:text-base">
+            Si tienes alguna consulta urgente, escríbenos directamente a comercial@trackflow.com
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-6 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <p>© 2025 TrackFlow. Todos los derechos reservados.</p>
+        <a
+          href="https://linkedin.com/company/trackflow"
+          class="font-medium text-sky-700 transition hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
+
+    <script src="validation.js"></script>
+  </body>
+</html>
